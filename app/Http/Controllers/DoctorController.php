@@ -6,6 +6,8 @@ use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Redirector;
 use Carbon\Carbon;
 
 class DoctorController extends Controller
@@ -30,9 +32,7 @@ class DoctorController extends Controller
         $request->validate([
             'cro' => 'required|max:5|min:5',
             'imageProfile' => 'required',
-            'nome' => 'required',
             'genero' => 'required',
-            'email' => 'required',
             'dataNascimento' => 'required',
 
         ]);
@@ -42,7 +42,7 @@ class DoctorController extends Controller
         $doctor->id = $request->input('cro');
         $doctor->nome = auth()->user()->name;
         $doctor->genero = $request->input('genero');
-        $doctor->email = $request->input('email');
+        $doctor->email = auth()->user()->email;
         $doctor->dataNascimento = $request->input('dataNascimento');
         $doctor->user_id = auth()->user()->id;
 
@@ -57,7 +57,7 @@ class DoctorController extends Controller
         $user->doctor_id = $doctor->id;
 
         $user->save();
-        return view('home', ['doctor' => $doctor]);
         
+        return redirect()->action([DoctorController::class, 'index']);
     }
 }

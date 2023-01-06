@@ -34,11 +34,11 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
-            @if(request()->path() != 'patient/create')
+            @if(request()->path() != 'patient/create' && request()->path() != 'doctor/create')
                 <li><a class="dropdown-item" href="/patient/create">CADASTRAR CLIENTE</a></li>
             @endif
-            @if(request()->path() != 'doctor/{{ auth()->user()->doctor_id}}')
-                <li><a class="dropdown-item" href="doctor/{{ auth()->user()->doctor_id}}">MEUS DADOS</a></li>
+            @if(request()->path() != 'doctor/{{ auth()->user()->doctor_id}}' && request()->path() != 'doctor/create')
+                <li><a class="dropdown-item" href="/doctor/{{ auth()->user()->doctor_id}}">MEUS DADOS</a></li>
             @endif
             @if(auth()->check())
             <form method="POST" action="/logout">

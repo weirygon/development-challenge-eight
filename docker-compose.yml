@@ -13,8 +13,6 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     working_dir: /var/www
-    depends_on:
-      - db
     ports:
       - 8989:80
     networks:

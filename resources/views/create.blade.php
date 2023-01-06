@@ -51,7 +51,11 @@
                 <div class="line1">
                     <div class="name">
                         <label for="nome">NOME</label>
+                        @if (request()->path() == 'doctor/create')
+                            <p>{{auth()->user()->name}}</p>
+                        @else
                         <input class="paciente_name" type="text" name="nome" placeholder="Nome Completo" maxlenght="30">
+                        @endif
                     </div>
                     <div class="form-img" style="margin-top: 30px">
                         <label></label>
@@ -76,7 +80,11 @@
                 <div class="line3">
                     <div class="esq-line3">
                         <label for="email">EMAIL</label>
-                        <input class="paciente" type="email" name="email" placeholder="E-mail (ex: abc@email.com)" maxlenght="40">
+                        @if (request()->path() == 'doctor/create')
+                            <p>{{auth()->user()->email}}</p>
+                        @else
+                            <input class="paciente" type="email" name="email" placeholder="E-mail (ex: abc@email.com)" maxlenght="40">
+                        @endif
                     </div>
 
                     <div class="dir-line3">
@@ -154,7 +162,7 @@
         
         @endif
         <div class="paciente">
-            <input class="paciente" type="submit" value="CADASTRAR">
+            <input class="paciente" src="/" type="submit" value="CADASTRAR">
         </div>
         
     </form>
