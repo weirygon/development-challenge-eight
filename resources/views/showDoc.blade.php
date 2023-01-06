@@ -10,6 +10,8 @@
 
 @section('conteudo')
 
+    {{$image}}
+
     <div class="container-block-patient">
         <div class="block-patient">
             <div class="head-patient">
@@ -46,7 +48,7 @@
                     </div>
                 </div>
                 <div class="patient-image">
-                    <img src="/storage/doctor/img/{{ $doctor->id }}/profile.jpg" alt="pic-profile">
+                    <img src="{{ $image }}" alt="pic-profile">
                 </div>
             </div>
         </div>

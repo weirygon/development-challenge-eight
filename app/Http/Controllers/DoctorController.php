@@ -12,6 +12,7 @@ use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
+
     public function index(){
         Carbon::setLocale('pt');
         return view('home', ['doctor' => Doctor::find(auth()->user()->doctor_id)]);
@@ -24,7 +25,12 @@ class DoctorController extends Controller
     public function showDoc($id){
         Carbon::setLocale('pt');
 
-        return view('showDoc', ['doctor' => Doctor::find($id)]);
+        if(auth()->user()->doctor_id != $id){   #Requets different id
+            return redirect()->action([DoctorController::class, 'index']);
+        }
+
+
+        return view('showDoc', ['doctor' => Doctor::find($id),'image' => Storage::disk('s3')->temporaryUrl('doctor/' . $id . '/profile.jpg', now()->addMinutes(1)) ]);
     }
     public function store(Request $request)
     {
@@ -46,10 +52,14 @@ class DoctorController extends Controller
         $doctor->dataNascimento = $request->input('dataNascimento');
         $doctor->user_id = auth()->user()->id;
 
-        // UPLOAD IMG
-        $dir = '/public/doctor/img/' . $doctor->id;
-        
-        Storage::putFileAs($dir, $request->file('imageProfile'), 'profile.jpg');
+        // UPLOAD IMG AWS
+
+        $fileName = $request->file('imageProfile')->getClientOriginalName();
+        $filePath = 'doctor/' . $doctor->id . '/profile.jpg';
+ 
+        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageProfile')));
+        $path = Storage::disk('s3')->url($path);
+
 
         $doctor->save();
 

@@ -3,11 +3,17 @@ FROM weirygon/laravel
 #Installing Fortify
 RUN composer require laravel/fortify
 
+RUN composer require aws/aws-sdk-php-laravel
+
+#Installing FlySystem
+RUN composer require league/flysystem-aws-s3-v3
+
 #Copy all files and put in image
 COPY . .
 
 #Generating Key
 RUN php artisan key:generate
-#RUN php artisan migrate:refresh
 
+#Run Web Serve
+EXPOSE 80
 CMD php artisan serve --host=0.0.0.0 --port=80

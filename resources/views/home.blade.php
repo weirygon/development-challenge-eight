@@ -14,6 +14,9 @@
 
     @if(isset($doctor))
 
+    aaaaaaaaaa
+    {{ Storage::disk('s3')->url('doctor/' . $dcotor->id . '/profile.jpg') }}
+
         @forelse($doctor->patients as $patient)
 
         
