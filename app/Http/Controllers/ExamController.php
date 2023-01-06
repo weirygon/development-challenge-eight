@@ -19,12 +19,12 @@ class ExamController extends Controller
         $exam->laudo = $request->laudo;
         $exam->patient_id = $request->foreignId;
 
+        //UPLOAD
+        $imageName = md5($request->file('imageExam')->getFilename().strtotime("now")).".jpg";
+        $filePath = 'patient/' . $request->input('foreignId') .'/'. $imageName;
 
-        $dir = '/public/patient/img/' . $exam->patient_id;
+        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageExam')));
         
-        $imageName = md5($request->file('image')->getFilename().strtotime("now")).".jpg";
-        Storage::putFileAs($dir, $request->file('image'), $imageName);
-
         $exam->img = $imageName;
 
         $exam->save();

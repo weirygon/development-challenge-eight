@@ -10,8 +10,6 @@
 
 @section('conteudo')
 
-    {{$image}}
-
     <div class="container-block-patient">
         <div class="block-patient">
             <div class="head-patient">

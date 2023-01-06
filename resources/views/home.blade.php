@@ -12,10 +12,7 @@
 
 @section('conteudo')
 
-    @if(isset($doctor))
-
-    aaaaaaaaaa
-    {{ Storage::disk('s3')->url('doctor/' . $dcotor->id . '/profile.jpg') }}
+    @if(isset($doctor))  
 
         @forelse($doctor->patients as $patient)
 
@@ -23,7 +20,7 @@
         <div class="patient">
 
             <div class="pic-profile">
-                <img src="/storage/patient/img/{{ $patient->id }}/profile.jpg" alt="pic-profile">
+                <img src={{ Storage::disk('s3')->temporaryUrl('patient/' . $patient->id . '/profile.jpg', now()->addMinutes(1)) }} alt="pic-profile">
             </div>
 
             <div class="description-profile">

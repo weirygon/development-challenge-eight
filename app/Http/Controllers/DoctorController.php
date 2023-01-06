@@ -58,7 +58,6 @@ class DoctorController extends Controller
         $filePath = 'doctor/' . $doctor->id . '/profile.jpg';
  
         $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageProfile')));
-        $path = Storage::disk('s3')->url($path);
 
 
         $doctor->save();

@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="patient-image">
-                    <img src="/storage/patient/img/{{ $patient->id }}/profile.jpg" alt="pic-profile">
+                    <img src={{ Storage::disk('s3')->temporaryUrl('patient/' . $patient->id . '/profile.jpg', now()->addMinutes(1)) }} alt="pic-profile">
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
             <p>Publicado: {{ $exam->created_at->diffForHumans() }}</p>
             <div class=content-Exam>
                 <div class="img-Exam">
-                    <img src="/storage/patient/img/{{ $patient->id }}/{{ $exam->img }}" alt="imageExam">
+                    <img src={{ Storage::disk('s3')->temporaryUrl('patient/' . $patient->id . '/' . $exam->img, now()->addMinutes(1)) }} alt="imageExam">
                 </div>
                 <div class="laudo-exam">
                     <p>Laudo: </p>
@@ -109,7 +109,7 @@
 
                 
                 <div class="form-img">
-                    <input type="file" id="image" name="image" class="from-control-file">  
+                    <input type="file" id="imageExam" name="imageExam" class="from-control-file">  
                 </div>
 
                 <div class="laudo-exame">
