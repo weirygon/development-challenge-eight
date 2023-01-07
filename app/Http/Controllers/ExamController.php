@@ -29,6 +29,6 @@ class ExamController extends Controller
 
         $exam->save();
 
-        return view('show', ['patient' => Patient::with('exams')->find($exam->patient_id)]);
+        return redirect()->back();
     }
 }
