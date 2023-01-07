@@ -23,9 +23,11 @@
 
    
         
-    <div class="logo">
-        <img src="/img/medcloud.svg" alt="medcloud">
-    </div>
+    <a href='/'>    
+        <div class="logo">
+            <img src="/img/medcloud.svg" alt="medcloud">    
+        </div>
+    </a>
 
     <div class="dropdown">
         <button class="user" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
