@@ -3,8 +3,6 @@ FROM weirygon/laravel
 #Installing Fortify
 RUN composer require laravel/fortify
 
-RUN composer require aws/aws-sdk-php-laravel
-
 #Installing FlySystem
 RUN composer require league/flysystem-aws-s3-v3
 
