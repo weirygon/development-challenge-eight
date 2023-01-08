@@ -27,3 +27,6 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"devops","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
       - cat imagedefinitions.json 
+artifacts:
+  files:
+    - imagedefinitions.json
