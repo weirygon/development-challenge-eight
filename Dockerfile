@@ -1,4 +1,4 @@
-FROM weirygon/laravel
+FROM public.ecr.aws/l6e7p6g7/laravel
 
 #Installing Fortify
 RUN composer require laravel/fortify
