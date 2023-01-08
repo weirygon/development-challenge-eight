@@ -1,0 +1,21 @@
+.card-body{
+
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    max-width: none;
+    margin: 25px 10% 50px 10%;
+    padding: 2px;
+
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+}
+
+.card-body form{
+
+    margin: 30px;
+
+}

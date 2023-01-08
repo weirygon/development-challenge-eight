@@ -1,0 +1,189 @@
+
+hr{
+    background-color: #00446B;
+}
+h1{
+    font-size: 26px;
+    font-weight: bold;
+    color: #00446b;
+}
+.container-block-patient{
+    padding: 5px;
+    color: #00446b;
+}
+.block-patient{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: .5%;
+}
+.head-patient{
+    display: flex;
+    flex-direction: row;
+}
+#title{
+    width: 50%;
+}
+#edit_date{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+#edit_date button{
+    background-color: #00446B;
+    color: white;
+    font-weight: bold;
+    border: #00446b;
+    border-radius: 5px;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+}
+.patient-data{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.patient-image{
+    width: 20%;
+    height: auto;
+}
+.patient-image img{
+    width: 100%;
+    height: auto;
+}
+
+
+.line1{
+    display: flex;
+    flex-direction: row;
+}
+#name{
+    width: 50%;
+}
+#genre{
+    width: 50%;
+}
+.line2{
+    display: flex;
+    flex-direction: row;
+}
+#email{
+    width: 50%;
+}
+#age{
+    width: 50%;
+}
+.line3{
+    display: flex;
+    flex-direction: row;
+}
+#birth{
+    width: 50%;
+}
+#phone{
+    width: 50%;
+}
+.line4{
+    display: flex;
+    flex-direction: row;
+}
+#start-treatment{
+    width: 50%;
+}
+#treatment-prediction{
+    width: 50%;
+}
+.container-block-anamnesis{
+    padding: 5px;
+}
+.block-anamnesis{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: .5%;
+}
+.container-exam{
+    display: block;
+    padding: 5px;
+}
+
+.exam{
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid black;
+    border-width: 2px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+}
+
+.content-Exam{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.img-Exam{
+
+    display: flex;
+    width: 50%;
+    height: 200px;
+    justify-content: center;
+
+}
+
+.img-Exam img{
+
+    
+    width: auto;
+    height: 100%;
+
+}
+
+.laudo-exam{
+
+    width: 50%;
+    height: 200px;
+
+}
+.add-Exam{
+
+    display: flex;
+    flex-direction: row;
+    height: 230px;
+
+}
+
+.form-img{
+
+    width: 50%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.laudo-exame{
+
+    width: 50%;
+    height: auto;
+
+}
+
+.laudo-exame textarea{
+
+    width: 100%;
+
+}
+
+.btn-cadastrar{
+
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+
+}

@@ -1,0 +1,230 @@
+
+.cadastro-box{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Configuração dados paciente*/
+.box-paciente{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+/*Configuração nome e imagem*/
+.line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+.name{
+    width: 50%;
+}
+.name input{
+    width: 95%;
+}
+/*Configuração para a imagem do paciente*/
+.form-img{
+    margin: auto;
+}
+.picture:hover{
+    color: #777;
+    background: #ccc;
+}
+
+.line2{
+    display: flex;
+    flex-direction: column;
+    margin:10px 0px;
+}
+
+.form-check-inline .form-check-input{
+
+    margin: auto 5px;
+
+}
+
+/*Configuração espaçamento email*/
+.line3{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line3{
+    width: 50%;
+}
+.esq-line3 input{
+    width: 95%;
+}
+.dir-line3{
+    width: 50%;
+}
+.dir-line3 input{
+    width: 100%;
+}
+
+/*Configuração nascimento e telefone*/
+.line4{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line4{
+    width: 50%;
+}
+.esq-line4 input{
+    width: 95%;
+}
+.dir-line4{
+    width: 50%;
+}
+.dir-line4 input{
+    width: 100%;
+}
+/*Configuração sobre o tratamento*/
+.line5{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line5{
+    width: 50%;
+}
+.esq-line5 input{
+    width: 95%;
+}
+.dir-line5{
+    width: 50%;
+}
+.dir-line5 input{
+    width: 100%;
+}
+/*Configuração global input paciente*/
+.paciente input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #00446B;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 12pt;
+    outline: none;
+    margin: auto;
+}
+.paciente input[type="submit"]{
+    width: 50%;
+    height: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #00446B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 10% auto 10% auto;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+/*Configuração parte de tratamento*/
+.anamnese{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.anamnese h1{
+    width: 90%;
+    height: auto;
+    margin: 0;
+    color:#00446B;
+    font-weight: 700;
+    font-size: 24px;
+}
+.text-tratamento{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.text-tratamento input[type="submit"]{
+    width: 40%;
+    margin: 0px auto;
+}
+textarea{
+    resize: none;
+}
+textarea:invalid{
+    border: 2px solid red;
+}
+
+/*Configuração area de exames e laudo*/
+.exame-box{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.exame-box h1{
+    width: 90%;
+    height: auto;
+    margin: 0;
+    color:#00446B;
+    font-weight: 700;
+    font-size: 24px;
+}
+.right-left-exame{
+    display: flex;
+    flex-direction: row;
+}
+.img-exame{
+    width: 50%;
+    margin: auto ;
+}
+
+.picture_input{
+    display: none;
+}
+.picture{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    aspect-ratio: 5/3;
+    background-color: #d6d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed;
+    color: rgb(108, 108, 108);
+    transition: color 3s ease-in-out, backgroud 3s ease-in-out;
+}
+.picture:hover{
+    color: #777;
+    background: #ccc;
+}
+.laudo-exame{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.text-laudo{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.text-laudo input[type="submit"]{
+    width: 40%;
+    margin: 0px auto;
+}
+textarea{
+    resize: none;
+}
+textarea:invalid{
+    border: 2px solid red;
+}
