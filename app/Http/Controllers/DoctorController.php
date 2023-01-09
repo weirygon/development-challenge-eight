@@ -56,8 +56,6 @@ class DoctorController extends Controller
 
         $fileName = $request->file('imageProfile')->getClientOriginalName();
         $filePath = 'doctor/' . $doctor->id . '/profile.jpg';
- 
-        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageProfile')));
 
 
         $doctor->save();
@@ -66,7 +64,8 @@ class DoctorController extends Controller
         $user->doctor_id = $doctor->id;
 
         $user->save();
-        
+        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageProfile')));
+
         return redirect()->action([DoctorController::class, 'index']);
     }
 }
