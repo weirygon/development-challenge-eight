@@ -58,7 +58,18 @@ class DoctorController extends Controller
         $filePath = 'doctor/' . $doctor->id . '/profile.jpg';
 
 
-        $doctor->save();
+        try { 
+
+            $doctor->save();
+
+        } catch(\Illuminate\Database\QueryException $ex){ 
+            
+
+            return redirect()->back()->withErrors(['errors' => 'The CRO already used']);
+
+        }
+
+        
 
         $user = User::find(auth()->user()->id);
         $user->doctor_id = $doctor->id;

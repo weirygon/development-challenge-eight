@@ -60,7 +60,17 @@ class PatientController extends Controller
             'img' => $imageName
         ]);
 
-        $patient->save();
+        try { 
+
+            $patient->save();
+
+        } catch(\Illuminate\Database\QueryException $ex){ 
+            
+
+            return redirect()->back()->withErrors(['errors' => 'The CPF already used']);
+
+        }
+
 
         // UPLOAD IMG
             //PROFILE
