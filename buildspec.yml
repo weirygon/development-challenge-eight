@@ -7,7 +7,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 275540630396.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=275540630396.dkr.ecr.us-east-1.amazonaws.com/medlcloud
+      - REPOSITORY_URI=275540630396.dkr.ecr.us-east-1.amazonaws.com/medcloud
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
       - aws s3api get-object --bucket medcloud-test --key .env .env
