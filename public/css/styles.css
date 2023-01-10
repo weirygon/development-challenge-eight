@@ -1,0 +1,93 @@
+*{
+
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+header {
+
+    width: auto;
+    height: 100px;
+    padding: 25px 10% 25px 10%;
+    background-color: white;
+    justify-content: baseline;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+/*  div LOGO */
+
+.logo {
+    
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+.logo img{
+    
+    width: auto;
+    height: 80%;
+    
+}
+
+/*  div DROPDOWN    */
+
+.dropdown{
+
+    width: 50%;
+    height: 50px;
+    float: right;
+
+}
+
+.user{
+
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    background-color: white;
+    border: none;
+    float: right;
+
+}
+
+/*  div DESCRIPTION */
+
+.description{
+
+    display: block;
+    width: 80%;
+    height: 50px;
+    color:#00446B;
+    max-width: none;
+    margin: 25px 10% 0 10%;
+
+}
+
+/* div CONTAINER */
+
+
+.container{
+
+    display: block;
+    width: 80%;
+    height: auto;
+    max-width: none;
+    margin: 25px 10% 50px 10%;
+    padding: 2px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.button_sair{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: start;
+    padding: 0.25rem 1rem;
+}
+.button_sair:hover{
+    background-color:rgba(197, 197, 197, 0.1);;
+}
