@@ -10,7 +10,7 @@ phases:
       - REPOSITORY_URI=275540630396.dkr.ecr.us-east-1.amazonaws.com/medcloud
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
-      - aws s3api get-object --bucket medcloud-test --key .env .env
+      - aws s3api get-object --bucket medcloud-file --key .env .env
   build:
     commands:
       - echo Build started on `date`
@@ -25,7 +25,7 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"DevOpsContainer","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+      - printf '[{"name":"MedCloudContainer","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
       - cat imagedefinitions.json 
 artifacts:
   files:
