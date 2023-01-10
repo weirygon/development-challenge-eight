@@ -22,12 +22,11 @@ class ExamController extends Controller
         //UPLOAD
         $imageName = md5($request->file('imageExam')->getFilename().strtotime("now")).".jpg";
         $filePath = 'patient/' . $request->input('foreignId') .'/'. $imageName;
-
-        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageExam')));
         
         $exam->img = $imageName;
 
         $exam->save();
+        $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageExam')));
 
         return redirect()->back();
     }
