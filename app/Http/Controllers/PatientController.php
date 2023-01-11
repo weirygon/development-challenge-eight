@@ -54,12 +54,6 @@ class PatientController extends Controller
         $patient->tratamento = $request->input('tratamento');
         $patient->doctor_id = $request->input('foreignId');
 
-        Exam::create([
-            'patient_id' => $patient->id,
-            'laudo' => $request->input('laudo'),
-            'img' => $imageName
-        ]);
-
         try { 
 
             $patient->save();
@@ -73,17 +67,25 @@ class PatientController extends Controller
 
 
         // UPLOAD IMG
-            //PROFILE
+        //PROFILE
         $filePath = 'patient/' . $patient->id . '/profile.jpg';
  
         $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageProfile')));
        
-            //FIRST EXAM
+        //FIRST EXAM
         $imageName = md5($request->file('imageExam')->getFilename().strtotime("now")).".jpg";
+
+        Exam::create([
+            'patient_id' => $patient->id,
+            'laudo' => $request->input('laudo'),
+            'img' => $imageName
+        ]);
 
         $filePath = 'patient/' . $patient->id .'/'. $imageName;
         
         $path = Storage::disk('s3')->put($filePath, file_get_contents($request->file('imageExam')));
+
+
 
         return redirect()->action([DoctorController::class, 'index']);
     }
